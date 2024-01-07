@@ -1,3 +1,5 @@
+package HelloDSA;
+
 import java.util.Arrays;
 
 public class ChangeValue {
