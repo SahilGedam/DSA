@@ -1,0 +1,2 @@
+time complexity of .lenght()  is O(1)  not O(n)
+java does not iterate througout the length , it is the property

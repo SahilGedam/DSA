@@ -13,10 +13,26 @@ public class NestedLoops {
     }
   }
 
+  private static void dropNonDominantsInCalculation(int[] numbers) {
+    for (int i : numbers) { // O(n)
+      System.out.println(i);
+    }
+    for (int i : numbers) { // O(n^2)
+      for (int j : numbers) {
+        System.out.println(i + j);
+      }
+    }
+    // total = O(n + n^2)  non dominant is ignored  so it becomes
+    //total= O(n^2)
+  }
+
   public static void main(String[] args) {
     String[] arr1 = { "a", "b", "c", "d", "e", "f" };
     String[] arr2 = { "x", "y", "z" };
+    int[] numbers = { 0, 1, 2, 3, 4, 5 };
 
     printPairsOfArrays(arr1, arr2);
+
+    dropNonDominantsInCalculation(numbers);
   }
 }
