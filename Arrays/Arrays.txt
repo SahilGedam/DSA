@@ -1,0 +1,4 @@
+2 types of arrays 
+Static and Dynamic arrays
+Static arrays have fixed size and do not grow , eg arrays in Java
+Dynamic arrays does not have fixed size and they can grow in size , eg arrays in JavaScript
