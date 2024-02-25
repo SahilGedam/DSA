@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Hashing {
 
+  // implement our own hashmap
   static class HashMap<K, V> { // generic
 
     private class Node {
