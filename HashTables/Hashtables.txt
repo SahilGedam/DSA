@@ -2,3 +2,34 @@ insert = O (1)
 lookup = O (1)
 delete = O (1)
 search = O (1)
+
+ Hashsets has all unique values , does not duplicate values
+
+ sets does not maintain any order
+
+ in java these hash functions gives O(1) - 
+ put ()
+ get ()
+ containsKey ()
+ remove()
+ size ()
+ keySet ()
+
+
+ **** hashmap in java is internally implemented as array of linked lists ****
+
+ data is saved in diffrent nodes of linked list at diffrent index of arrays ( buckets)
+
+ hashing = change form of key and makes it unique value that is used as index (bucket) , at this bucket the data is saved
+
+ one bucket can have multiple nodes / values / data saved in the form of linked list
+
+ a threshhold (k) is declared above which size of the array is increased to add more elements
+
+ lambda is (total no of nodes / size of the array) if lambda crosses the threshold size of array is increased 
+ to make the Data structure more optimised
+
+Rehashing -  Rehashing is the process of increasing the size of a hashmap and 
+redistributing the elements to new buckets based on their new hash values
+
+

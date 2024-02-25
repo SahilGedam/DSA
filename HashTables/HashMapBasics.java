@@ -2,9 +2,9 @@ package HashTables;
 
 import java.util.*;
 
-public class HashTablesBasics {
+public class HashMapBasics {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) { // key , value
     // country population
     HashMap<String, Integer> map = new HashMap<String, Integer>();
 
