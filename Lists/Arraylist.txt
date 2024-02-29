@@ -1,0 +1,2 @@
+insert O(n)
+search O(1)

@@ -1,0 +1,7 @@
+Insert O(1)
+search O(n)
+
+3 types of ll
+singly ll
+double ended ll
+circular ll
