@@ -12,7 +12,7 @@ class ListNode {
 
 public class ReverseLL {
 
-  public ListNode reverseList(ListNode head) {
+  public ListNode reverseListIeration(ListNode head) {
     if (head == null || head.next == null) return head;
 
     //use two nodes to keep track of two nodes
@@ -34,5 +34,17 @@ public class ReverseLL {
     //set tail
     head.next = null;
     return prev;
+  }
+
+  public ListNode reverseList(ListNode head) {
+    if (head == null || head.next == null) {
+      return head;
+    }
+    ListNode next = head.next;
+    ListNode newHead = reverseList(next); // recursively reverse the sub list with nodes after the current node and return ites head
+    next.next = head; // next must be the last node in the reversed sub list
+    // add the current node after the reversed sub list
+    head.next = null; // cut off the link between the current node and nodes after it
+    return newHead; // return the new head
   }
 }
