@@ -25,6 +25,7 @@ public class TreeBasics {
 
     public Node buildTree(int nodes[]) {
       index++;
+      System.out.println(nodes[index] + " " + index);
       if (nodes[index] == -1) {
         return null;
       }
@@ -33,6 +34,17 @@ public class TreeBasics {
       newNode.left = buildTree(nodes);
       newNode.right = buildTree(nodes);
       return newNode;
+    }
+  }
+
+  static class TreeInfo {
+
+    int ht;
+    int diam;
+
+    TreeInfo(int ht, int diam) {
+      this.ht = ht;
+      this.diam = diam;
     }
   }
 
@@ -123,9 +135,80 @@ public class TreeBasics {
     return myHeight;
   }
 
+  // diameter of the tree = maximum distance between two nodes in a tree
+  // 3 cases= 1) diamter is in left subtree 2) diamter is in right subtree 3) diamter goes through root node
+  public static int diameter(Node root) { // O(n^2)
+    if (root == null) {
+      return 0;
+    }
+
+    int diamLeft = diameter(root.left);
+    int diamRight = diameter(root.right);
+    int diam = heightOfTree(root.left) + heightOfTree(root.right) + 1;
+    return Math.max(diam, Math.max(diamRight, diamLeft));
+  }
+
+  // faster way to calculate diamter , need to create a class TreeInfo
+  public static TreeInfo diameter2(Node root) { // O(n)
+    if (root == null) {
+      return new TreeInfo(0, 0);
+    }
+    TreeInfo left = diameter2(root.left);
+    TreeInfo right = diameter2(root.right);
+
+    int myHeight = Math.max(left.ht, right.ht) + 1;
+    int diamLeft = left.diam;
+    int diamRight = right.diam;
+    int diam3 = left.ht + right.ht + 1;
+    int myDiam = Math.max(Math.max(diamRight, diamLeft), diam3);
+    TreeInfo myInfo = new TreeInfo(myHeight, myDiam);
+    return myInfo;
+  }
+
+  // // check if subtree is part of the tree ***
+
+  // logic is proper , but unable to create another tree , check better algoriths to create binary tree
+
+  // public static boolean isIdentical(Node root, Node subRoot) {
+  //   if (root == null && subRoot == null) {
+  //     return true;
+  //   }
+  //   if (root == null || subRoot == null) {
+  //     return true;
+  //   }
+
+  //   if (root.data == subRoot.data) {
+  //     return (
+  //       isIdentical(root.left, subRoot.left) &&
+  //       isIdentical(root.right, subRoot.right)
+  //     );
+  //   }
+
+  //   return false;
+  // }
+
+  // public static boolean isSubtree(Node root, Node subRoot) {
+  //   if (subRoot == null) {
+  //     return true;
+  //   }
+  //   if (root == null) {
+  //     return false;
+  //   }
+
+  //   if (root.data == subRoot.data) {
+  //     if (isIdentical(root, subRoot)) {
+  //       return true;
+  //     }
+  //   }
+  //   return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+  // }
+
   public static void main(String[] args) {
     int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+    int nodes2[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+
     BinaryTree tree = new BinaryTree();
+
     Node root = tree.buildTree(nodes);
     // System.out.println(root.data);
     //  preorder(root); // O (n) traversal
@@ -134,6 +217,9 @@ public class TreeBasics {
     // levelorder(root);
     // System.out.println(countOfNodes(root));
     // System.out.println(sumOfNodes(root));
-    System.out.println(heightOfTree(root));
+    // System.out.println(heightOfTree(root));
+    // System.out.println(diameter(root));
+    // System.out.println(diameter2(root).diam);
+
   }
 }
