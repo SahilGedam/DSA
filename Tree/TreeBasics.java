@@ -93,6 +93,16 @@ public class TreeBasics {
     }
   }
 
+  public static int countOfNodes(Node root) {
+    if (root == null) {
+      return 0;
+    }
+
+    int leftNodes = countOfNodes(root.left);
+    int rightNodes = countOfNodes(root.right);
+    return leftNodes + rightNodes + 1;
+  }
+
   public static void main(String[] args) {
     int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
     BinaryTree tree = new BinaryTree();
@@ -101,6 +111,7 @@ public class TreeBasics {
     //  preorder(root); // O (n) traversal
     // inorder(root);
     // postorder(root);
-    levelorder(root);
+    // levelorder(root);
+    System.out.println(countOfNodes(root));
   }
 }
