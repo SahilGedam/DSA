@@ -113,6 +113,16 @@ public class TreeBasics {
     return leftsum + rightsum + root.data;
   }
 
+  public static int heightOfTree(Node root) {
+    if (root == null) {
+      return 0;
+    }
+    int leftHeight = heightOfTree(root.left);
+    int rightHeight = heightOfTree(root.right);
+    int myHeight = Math.max(leftHeight, rightHeight) + 1;
+    return myHeight;
+  }
+
   public static void main(String[] args) {
     int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
     BinaryTree tree = new BinaryTree();
@@ -123,6 +133,7 @@ public class TreeBasics {
     // postorder(root);
     // levelorder(root);
     // System.out.println(countOfNodes(root));
-    System.out.println(sumOfNodes(root));
+    // System.out.println(sumOfNodes(root));
+    System.out.println(heightOfTree(root));
   }
 }
