@@ -25,7 +25,6 @@ public class TreeBasics {
 
     public Node buildTree(int nodes[]) {
       index++;
-      System.out.println(nodes[index] + " " + index);
       if (nodes[index] == -1) {
         return null;
       }
@@ -169,43 +168,42 @@ public class TreeBasics {
 
   // logic is proper , but unable to create another tree , check better algoriths to create binary tree
 
-  // public static boolean isIdentical(Node root, Node subRoot) {
-  //   if (root == null && subRoot == null) {
-  //     return true;
-  //   }
-  //   if (root == null || subRoot == null) {
-  //     return true;
-  //   }
+  public static boolean isIdentical(Node root, Node subRoot) {
+    if (root == null && subRoot == null) {
+      return true;
+    }
+    if (root == null || subRoot == null) {
+      return true;
+    }
 
-  //   if (root.data == subRoot.data) {
-  //     return (
-  //       isIdentical(root.left, subRoot.left) &&
-  //       isIdentical(root.right, subRoot.right)
-  //     );
-  //   }
+    if (root.data == subRoot.data) {
+      return (
+        isIdentical(root.left, subRoot.left) &&
+        isIdentical(root.right, subRoot.right)
+      );
+    }
 
-  //   return false;
-  // }
+    return false;
+  }
 
-  // public static boolean isSubtree(Node root, Node subRoot) {
-  //   if (subRoot == null) {
-  //     return true;
-  //   }
-  //   if (root == null) {
-  //     return false;
-  //   }
+  public static boolean isSubtree(Node root, Node subRoot) {
+    if (subRoot == null) {
+      return true;
+    }
+    if (root == null) {
+      return false;
+    }
 
-  //   if (root.data == subRoot.data) {
-  //     if (isIdentical(root, subRoot)) {
-  //       return true;
-  //     }
-  //   }
-  //   return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
-  // }
+    if (root.data == subRoot.data) {
+      if (isIdentical(root, subRoot)) {
+        return true;
+      }
+    }
+    return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+  }
 
   public static void main(String[] args) {
     int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-    int nodes2[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
 
     BinaryTree tree = new BinaryTree();
 
@@ -219,7 +217,6 @@ public class TreeBasics {
     // System.out.println(sumOfNodes(root));
     // System.out.println(heightOfTree(root));
     // System.out.println(diameter(root));
-    // System.out.println(diameter2(root).diam);
-
+    System.out.println(diameter2(root).diam);
   }
 }
