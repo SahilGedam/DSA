@@ -1,0 +1,11 @@
+binary search tree , search time is O(h) where h is height
+
+
+binary search tree has following properties
+a => left subtree nodes < root
+b => right subtree nodes > root
+c => left & right subtree nodes are also bst with no duplicates  ( by default) , but sometimes bst can have duplicates
+
+special property => inorder traversal are always sorted arrays 
+
+skewed tree => unbalanced tree , entirely weighted in one side
