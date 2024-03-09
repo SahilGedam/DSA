@@ -9,3 +9,17 @@ c => left & right subtree nodes are also bst with no duplicates  ( by default) ,
 special property => inorder traversal are always sorted arrays 
 
 skewed tree => unbalanced tree , entirely weighted in one side
+
+
+----------------------------------------------------------------
+delete a node 
+
+3 case
+1 delete a leaf
+2 delete a node having 1 child
+3 delete a node having 2 children
+
+
+inorder successor = leftmost in right subtree
+
+inorder successor has always 0 or 1 children
