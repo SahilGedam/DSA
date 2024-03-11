@@ -1,0 +1,6 @@
+push O(1)
+pop O(1)
+peek O(1)   called as top in css
+
+
+last in first out LIFO
