@@ -2,7 +2,7 @@ package Stack;
 
 import java.util.*;
 
-public class StackBasicsAL {
+public class StackBasicsArrayList {
 
   static class Stack {
 

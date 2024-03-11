@@ -1,6 +1,6 @@
 package Stack;
 
-public class StackBasicsLL {
+public class StackBasicsLinkedList {
 
   // creating stack using Linked List
   static class Node {
