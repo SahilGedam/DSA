@@ -1,0 +1,16 @@
+fifi
+first in first out
+
+----------------------------------------------------------------
+operation
+
+add (enqueue)
+
+remove (dequeue)
+
+peek (front)
+
+----------------------------------------------------------------
+
+Queue is a interface , not a classs , so we implement it by using array , linkedlist or other classs
+
