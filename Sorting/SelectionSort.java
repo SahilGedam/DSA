@@ -4,17 +4,17 @@ import java.util.*;
 
 public class SelectionSort {
 
-  static void selectionSort(int[] arr) {
+  static void selectionSort(int[] arr) { // one swap per iteration
     for (int i = 0; i < arr.length - 1; i++) {
-      int index = i;
-      for (int j = i + 1; j < arr.length; j++) {
-        if (arr[j] < arr[index]) {
-          index = j; //searching for lowest index
+      int smallest = i;
+      for (int j = i + 1; j < arr.length; j++) { // opposite to bubble sort , we are inserting smallest number at start of array
+        if (arr[j] < arr[smallest]) {
+          smallest = j; //searching for lowest
         }
       }
-      int smallerNumber = arr[index];
-      arr[index] = arr[i];
-      arr[i] = smallerNumber;
+      int temp = arr[smallest];
+      arr[smallest] = arr[i];
+      arr[i] = temp;
     }
   }
 
