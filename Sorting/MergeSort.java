@@ -1,5 +1,6 @@
 package Sorting;
 
+// important for interviews
 // divide and conquer approach
 
 public class MergeSort {
