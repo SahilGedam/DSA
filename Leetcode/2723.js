@@ -4,9 +4,12 @@
  * @return {Promise}
  */
 var addTwoPromises = async function (promise1, promise2) {
-  return Promise.all([promise1, promise2]).then((values) => {
-    return values[0] + values[1];
-  });
+  // return Promise.all([promise1, promise2]).then((values) => {
+  //     return values[0] + values[1]
+  // })
+  //or
+  const [val1, val2] = await Promise.all([promise1, promise2]);
+  return val1 + val2;
 };
 
 /**
